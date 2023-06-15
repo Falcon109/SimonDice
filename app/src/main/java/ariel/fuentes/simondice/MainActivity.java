@@ -17,6 +17,7 @@ import android.hardware.SensorManager;
 import android.os.Vibrator;
 import android.content.pm.ActivityInfo;
 
+import java.util.Random;
 
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
@@ -27,6 +28,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private SensorManager sensorManager;
     private Sensor accelerometer;
     private Vibrator vibrator;
+
+    private String[] activities;
+    private Random random;
+    private int currentActivityIndex;
+
 
     MediaPlayer mediaPlayer;
     MediaPlayer mediaPlayer2;
@@ -67,6 +73,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 }
             }
         });
+
+        // Cargar el array activities desde el archivo XML
+        activities = getResources().getStringArray(R.array.actividades);
+        random = new Random();
+        generateRandomActivity();
     }
 
     @Override
@@ -96,6 +107,12 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             }
             return true;
         }
+    }
+
+    private void generateRandomActivity() {
+        currentActivityIndex = random.nextInt(activities.length);
+        String activityText = activities[currentActivityIndex];
+        frace.setText(activityText);
     }
 
     @Override
@@ -128,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         if (acceleration > 25) {
             frace.setText(R.string.Agitado);
-            vibrator.vibrate(100);
+            vibrator.vibrate(150);
         }
     }
 
