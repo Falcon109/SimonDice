@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Corte_bordes_BTNDerecha">
+        <item name="cornerSize">0dp</item>
+        <item name="cornerSizeBottomLeft">80%</item>
+        <item name="cornerFamily">cut</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+    </style>
+
+</resources>

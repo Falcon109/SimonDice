@@ -2,12 +2,12 @@
     <string name="app_name">SimonDice</string>
 
     <string name="titulo">Simon Dice</string>
-    <string name="empezar">Empezar</string>
+    <string name="TituloOpciones">Modo de Juegos:</string>
+    <string name="Modo1">Modo Normal</string>
+    <string name="Modo2">Modo Dificil</string>
 
     <string name="Puntaje">Puntaje - </string>
-    <string name="NumPuntaje">000000</string>
-    <string name="Nivel">Nivel. </string>
-    <string name="NumNivel">1</string>
+    <string name="Nivel">- Nivel 1 -</string>
 
     <string name="PuntajeMax">Mejor Puntaje - </string>
     <string name="NumPuntajeMax">000000</string>
@@ -15,6 +15,8 @@
     <string name="NumNivelMax">1</string>
 
     <string name="frace">¡Empecemos!</string>
+    <string name="contador">10</string>
+    <string name="tiempo">00</string>
 
     <string name="Arriba">Desplazamiento a Arriba</string>
     <string name="Abajo">Desplazamiento a Abajo</string>
@@ -22,5 +24,15 @@
     <string name="Izquierda">Desplazamiento a Izquierda</string>
 
     <string name="Agitado">El telefono se esta agitando</string>
+
+    <string name="Correcto">!BIEN¡</string>
+    <string name="Incorrecto">Error</string>
+
+    <string name="Perdiste">Perdiste</string>
+    <string name="TuMejorPuntaje">Tu mejor puntaje: </string>
+    <string name="PuntajeMejor">000</string>
+    <string name="TuPuntaje">Tu puntaje es: </string>
+    <string name="PuntajeObtenido">000</string>
+    <string name="btnReintentar">¿Jugar Otra Vez?</string>
 
 </resources>

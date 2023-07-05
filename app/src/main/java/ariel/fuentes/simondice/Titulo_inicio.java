@@ -8,10 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class Titulo_inicio extends AppCompatActivity {
 
     MediaPlayer mediaPlayer3;
-    ImageView altavoz2;
     boolean isMuted = false;
     int paused;
 
@@ -25,19 +26,19 @@ public class Titulo_inicio extends AppCompatActivity {
         mediaPlayer3.setLooping(true);
         mediaPlayer3.start();
 
-        altavoz2 = findViewById(R.id.volumen);
-        altavoz2.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton volumen = findViewById(R.id.Volumen);
+        volumen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (isMuted) {
                     // Si está silenciado, reanuda la reproducción y cambia la imagen a la de sonido activo
-                    mediaPlayer3.setVolume(1.0f, 1.0f);
-                    altavoz2.setImageResource(R.drawable.volume_up);
+                    mediaPlayer3.setVolume(0.2f, 0.2f);
+                    volumen.setImageResource(R.drawable.volume_up);
                     isMuted = false;
                 } else {
                     // Si no está silenciado, silencia la reproducción y cambia la imagen a la de sonido silenciado
                     mediaPlayer3.setVolume(0.0f, 0.0f);
-                    altavoz2.setImageResource(R.drawable.volume_mute);
+                    volumen.setImageResource(R.drawable.volume_mute);
                     isMuted = true;
                 }
             }
@@ -59,11 +60,11 @@ public class Titulo_inicio extends AppCompatActivity {
         paused=mediaPlayer3.getCurrentPosition();
     }
 
-    public void IraMenu (View clic1) {
-        Intent IraMenu = new Intent(this, MainActivity.class);
-        startActivity(IraMenu);
-        mediaPlayer3.release();
-        mediaPlayer3=null;
+    public void IrModoNormal (View clic1) {
+        Intent IrModoNormal = new Intent(this, ModoNormal.class);
+        startActivity(IrModoNormal);
+        //mediaPlayer3.release();
+        //mediaPlayer3=null;
     }
 
 }
