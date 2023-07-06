@@ -7,7 +7,7 @@
     <string name="Modo2">Modo Dificil</string>
 
     <string name="Puntaje">Puntaje - </string>
-    <string name="Nivel">- Nivel 1 -</string>
+    <string name="Nivel">- Nivel </string>
 
     <string name="PuntajeMax">Mejor Puntaje - </string>
     <string name="NumPuntajeMax">000000</string>
