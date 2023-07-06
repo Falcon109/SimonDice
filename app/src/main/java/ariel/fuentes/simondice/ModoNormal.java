@@ -3,6 +3,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -38,6 +39,8 @@ public class ModoNormal extends AppCompatActivity implements SensorEventListener
     private Random random;
     private int currentActivityIndex;
 
+    private CountDownTimer countDownTimer;
+    private long tiempoRestante = 4000; // 4 segundos en milisegundos
 
     MediaPlayer mediaPlayer;
     MediaPlayer mediaPlayer2;
@@ -56,6 +59,8 @@ public class ModoNormal extends AppCompatActivity implements SensorEventListener
 
         NumeroActividades = 10;
         ContadorActividades.setText(String.valueOf(NumeroActividades));
+
+        ContadorTiempo = findViewById(R.id.tiempotext);
 
         Actividad =findViewById(R.id.frace);
         gestos = new GestureDetector(this, new EscuchGestos());
@@ -97,12 +102,12 @@ public class ModoNormal extends AppCompatActivity implements SensorEventListener
         gestos.onTouchEvent(event);
         return super.onTouchEvent(event);
     }
-    class EscuchGestos extends GestureDetector.SimpleOnGestureListener{
+    class EscuchGestos extends GestureDetector.SimpleOnGestureListener {
         @Override
         public boolean onFling(@NonNull MotionEvent e1, @NonNull MotionEvent e2, float velocityX, float velocityY) {
-            float ancho = Math.abs(e2.getX()-e1.getX());
-            float alto = Math.abs(e2.getY()-e1.getY());
-            if (ancho>alto){
+            float ancho = Math.abs(e2.getX() - e1.getX());
+            float alto = Math.abs(e2.getY() - e1.getY());
+            if (ancho > alto) {
                 if (e2.getX() > e1.getX()) {
                     Actividad.setText(R.string.Derecha);
                     NumeroActividades--;
@@ -126,8 +131,7 @@ public class ModoNormal extends AppCompatActivity implements SensorEventListener
                         Nivel.setText(getString(R.string.Nivel) + " " + String.valueOf(NumeroNivel) + " -");
                     }
                 }
-            }
-            else {
+            } else {
                 if (e2.getY() > e1.getY()) {
                     Actividad.setText(R.string.Abajo);
                     NumeroActividades--;
@@ -152,7 +156,37 @@ public class ModoNormal extends AppCompatActivity implements SensorEventListener
                     }
                 }
             }
+
+            // Reiniciar el temporizador
+            startTimer();
+
             return true;
+        }
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        float x = event.values[0];
+        float y = event.values[1];
+        float z = event.values[2];
+
+        double acceleration = Math.sqrt(x * x + y * y + z * z);
+
+        if (acceleration > 60) {
+            Actividad.setText(R.string.Agitado);
+            vibrator.vibrate(100);
+            NumeroActividades--;
+            ContadorActividades.setText(String.valueOf(NumeroActividades));
+            // Verificar si el contador de actividades llegó a 0
+            if (NumeroActividades == 0) {
+                NumeroActividades = 10;
+                ContadorActividades.setText(String.valueOf(NumeroActividades));
+                NumeroNivel++;
+                Nivel.setText(getString(R.string.Nivel) + " " + String.valueOf(NumeroNivel) + " -");
+            }
+
+            // Reiniciar el temporizador
+            startTimer();
         }
     }
 
@@ -182,6 +216,9 @@ public class ModoNormal extends AppCompatActivity implements SensorEventListener
         if (accelerometer != null) {
             sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
         }
+
+        // Iniciar el temporizador al reanudar la actividad
+        startTimer();
     }
 
     @Override
@@ -192,27 +229,38 @@ public class ModoNormal extends AppCompatActivity implements SensorEventListener
         if (sensorManager != null) {
             sensorManager.unregisterListener(this);
         }
+
+        // Detener el temporizador al pausar la actividad
+        stopTimer();
     }
-    @Override
-    public void onSensorChanged(SensorEvent event) {
-        float x = event.values[0];
-        float y = event.values[1];
-        float z = event.values[2];
 
-        double acceleration = Math.sqrt(x * x + y * y + z * z);
+    private void startTimer() {
+        stopTimer(); // Detener el temporizador existente si hay uno en progreso
 
-        if (acceleration > 25) {
-            Actividad.setText(R.string.Agitado);
-            vibrator.vibrate(100);
-            NumeroActividades--;
-            ContadorActividades.setText(String.valueOf(NumeroActividades));
-            // Verificar si el contador de actividades llegó a 0
-            if (NumeroActividades == 0) {
-                NumeroActividades = 10;
-                ContadorActividades.setText(String.valueOf(NumeroActividades));
-                NumeroNivel++;
-                Nivel.setText(getString(R.string.Nivel) + " " + String.valueOf(NumeroNivel) + " -");
+        countDownTimer = new CountDownTimer(tiempoRestante, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                // Actualizar el tiempo restante en segundos y mostrarlo en el TextView
+                long segundos = millisUntilFinished / 1000;
+                ContadorTiempo.setText(String.valueOf(segundos));
             }
+
+            @Override
+            public void onFinish() {
+                // El temporizador ha finalizado, realizar alguna acción si es necesario
+                // Por ejemplo, generar una nueva actividad
+                generateRandomActivity();
+                // Reiniciar el temporizador
+                startTimer();
+            }
+        };
+        countDownTimer.start();
+    }
+
+    private void stopTimer() {
+        if (countDownTimer != null) {
+            countDownTimer.cancel();
+            countDownTimer = null;
         }
     }
 
