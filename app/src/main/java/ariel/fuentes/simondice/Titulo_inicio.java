@@ -27,6 +27,7 @@ public class Titulo_inicio extends AppCompatActivity {
         mediaPlayer3.start();
 
         FloatingActionButton volumen = findViewById(R.id.Volumen);
+        FloatingActionButton ajustes = findViewById(R.id.Ajustes);
         volumen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +42,14 @@ public class Titulo_inicio extends AppCompatActivity {
                     volumen.setImageResource(R.drawable.volume_mute);
                     isMuted = true;
                 }
+            }
+        });
+
+        ajustes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Titulo_inicio.this, SettingsActivity.class);
+                startActivity(intent);
             }
         });
 

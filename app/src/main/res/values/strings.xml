@@ -1,5 +1,7 @@
 <resources>
+
     <string name="app_name">SimonDice</string>
+    <string name="developer">Creado por Ariel Fuentes</string>
 
     <string name="titulo">Simon Dice</string>
     <string name="TituloOpciones">Modo de Juegos:</string>
@@ -22,6 +24,14 @@
     <string name="Abajo">Desliza el dedo hacia abajo</string>
     <string name="Derecha">Desliza el dedo hacia la derecha</string>
     <string name="Izquierda">Desliza el dedo hacia la izquierda</string>
+
+    <string-array name="actividades">
+        <item>Desliza el dedo hacia arriba</item>
+        <item>Desliza el dedo hacia abajo</item>
+        <item>Desliza el dedo hacia la izquierda</item>
+        <item>Desliza el dedo hacia la derecha</item>
+        <item>Agita el teléfono</item>
+    </string-array>
 
     <string name="Agitado">Agita el teléfono</string>
 

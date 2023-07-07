@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Simon Says</string>
+    <string name="developer">Created by Ariel Fuentes</string>
+
+    <string name="titulo">Simon Says</string>
+    <string name="TituloOpciones">Game Modes:</string>
+    <string name="Modo1">Normal Mode</string>
+    <string name="Modo2">Difficult Mode</string>
+
+    <string name="Puntaje">Score - </string>
+    <string name="Nivel">Level </string>
+
+    <string name="PuntajeMax">Best Score - </string>
+    <string name="NumPuntajeMax">000000</string>
+    <string name="NivelMax">Best Level </string>
+    <string name="NumNivelMax">1</string>
+
+    <string name="frace">Lets start!</string>
+    <string name="contador">10</string>
+    <string name="tiempo">00</string>
+
+    <string name="Arriba">Swipe up</string>
+    <string name="Abajo">Swipe down</string>
+    <string name="Derecha">Swipe right</string>
+    <string name="Izquierda">Swipe left</string>
+
+    <string-array name="actividades">
+        <item>Swipe up</item>
+        <item>Swipe down</item>
+        <item>Swipe left</item>
+        <item>Swipe right</item>
+        <item>Shake the phone</item>
+    </string-array>
+
+    <string name="Agitado">Shake the phone</string>
+
+    <string name="Correcto">Correct!</string>
+    <string name="Incorrecto">Incorrect</string>
+
+    <string name="Perdiste">You Lost</string>
+    <string name="TuMejorPuntaje">Your best score: </string>
+    <string name="PuntajeMejor">000</string>
+    <string name="TuPuntaje">Your score is: </string>
+    <string name="PuntajeObtenido">000</string>
+    <string name="btnReintentar">Play Again?</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="MejorPuntaje">Best Score</string>
+    <string name="UltimoPuntaje">Last Score Obtained</string>
+
+    <!-- Messages Preferences -->
+    <string name="ElMejorPuntaje">Best score obtained</string>
+    <string name="ElUltimoPuntajeObtenido">Last score obtained</string>
+
+
+</resources>

@@ -15,14 +15,7 @@
         android:theme="@style/Theme.SimonDice"
         tools:targetApi="31">
         <activity
-            android:name=".SettingsActivity"
-            android:exported="false"
-            android:label="@string/title_activity_settings" />
-        <activity
-            android:name=".Perdiste"
-            android:exported="false" />
-        <activity
-            android:name=".Titulo_inicio"
+            android:name=".Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,6 +23,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_settings">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Titulo_inicio" />
+        </activity>
+        <activity
+            android:name=".Perdiste"
+            android:exported="false" />
+        <activity
+            android:name=".Titulo_inicio"
+            android:exported="false"/>
         <activity
             android:name=".ModoNormal"
             android:exported="false"

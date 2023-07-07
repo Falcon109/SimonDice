@@ -8,4 +8,11 @@
         <item name="cornerFamilyBottomLeft">rounded</item>
     </style>
 
+    <style name="Corte_bordes_BTNIzquierda">
+        <item name="cornerSize">0dp</item>
+        <item name="cornerSizeBottomRight">80%</item>
+        <item name="cornerFamily">cut</item>
+        <item name="cornerFamilyBottomRight">rounded</item>
+    </style>
+
 </resources>

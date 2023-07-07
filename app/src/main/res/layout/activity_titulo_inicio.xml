@@ -8,6 +8,20 @@
     android:background="@color/color_200"
     tools:context=".Titulo_inicio">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/Ajustes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@drawable/icon_ajustes"
+        tools:tint="@color/white"
+        app:tint="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/Volumen"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/Corte_bordes_BTNIzquierda" />
+
     <ImageView
         android:id="@+id/Logofondo"
         android:layout_width="728dp"

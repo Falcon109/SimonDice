@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_300"
+    tools:context=".Splash">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="345dp"
+        android:layout_height="396dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="461dp"
+        app:layout_constraintBottom_toTopOf="@+id/creador"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_logo_date_a_live" />
+
+    <TextView
+        android:id="@+id/creador"
+        android:layout_width="306dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="28dp"
+        android:text="@string/developer"
+        android:textAlignment="center"
+        android:textColor="#5A5A5A"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
