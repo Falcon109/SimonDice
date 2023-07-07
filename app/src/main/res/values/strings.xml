@@ -18,12 +18,12 @@
     <string name="contador">10</string>
     <string name="tiempo">00</string>
 
-    <string name="Arriba">Desplazamiento a Arriba</string>
-    <string name="Abajo">Desplazamiento a Abajo</string>
-    <string name="Derecha">Desplazamiento a Derecha</string>
-    <string name="Izquierda">Desplazamiento a Izquierda</string>
+    <string name="Arriba">Desliza el dedo hacia arriba</string>
+    <string name="Abajo">Desliza el dedo hacia abajo</string>
+    <string name="Derecha">Desliza el dedo hacia la derecha</string>
+    <string name="Izquierda">Desliza el dedo hacia la izquierda</string>
 
-    <string name="Agitado">El telefono se esta agitando</string>
+    <string name="Agitado">Agita el teléfono</string>
 
     <string name="Correcto">!BIEN¡</string>
     <string name="Incorrecto">Error</string>
@@ -34,5 +34,14 @@
     <string name="TuPuntaje">Tu puntaje es: </string>
     <string name="PuntajeObtenido">000</string>
     <string name="btnReintentar">¿Jugar Otra Vez?</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="MejorPuntaje">Mejor Puntaje</string>
+    <string name="UltimoPuntaje">Ultimo puntaje Obtenido</string>
+
+    <!-- Messages Preferences -->
+    <string name="ElMejorPuntaje">Mejor puntaje obtenido</string>
+    <string name="ElUltimoPuntajeObtenido">El ultimo puntaje obtenido</string>
 
 </resources>

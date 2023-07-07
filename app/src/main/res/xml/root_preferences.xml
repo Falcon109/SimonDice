@@ -1,0 +1,23 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/MejorPuntaje">
+
+        <EditTextPreference
+            app:defaultValue="0"
+            app:key="MejorPuntajeObtenido"
+            app:title="@string/ElMejorPuntaje"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/UltimoPuntaje">
+        <EditTextPreference
+            android:singleLine="false"
+            android:title="@string/ElUltimoPuntajeObtenido"
+            app:defaultValue="0"
+            app:key="ElUltimoPuntajeObtenido"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

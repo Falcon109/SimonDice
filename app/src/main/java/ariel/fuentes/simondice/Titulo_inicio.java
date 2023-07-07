@@ -21,7 +21,7 @@ public class Titulo_inicio extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_titulo_inicio);
 
-        mediaPlayer3 = MediaPlayer.create(this, R.raw.emotionalorchestra);
+        mediaPlayer3 = MediaPlayer.create(this, R.raw.lets_freaking_do_this);
         mediaPlayer3.setVolume(0.2f,0.2f);
         mediaPlayer3.setLooping(true);
         mediaPlayer3.start();
