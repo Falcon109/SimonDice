@@ -13,10 +13,9 @@
 
     <PreferenceCategory app:title="@string/UltimoPuntaje">
         <EditTextPreference
-            android:singleLine="false"
-            android:title="@string/ElUltimoPuntajeObtenido"
             app:defaultValue="0"
             app:key="ElUltimoPuntajeObtenido"
+            android:title="@string/ElUltimoPuntajeObtenido"
             app:useSimpleSummaryProvider="true" />
     </PreferenceCategory>
 

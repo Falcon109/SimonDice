@@ -167,9 +167,9 @@ public class ModoNormal extends AppCompatActivity implements SensorEventListener
         float y = event.values[1];
         float z = event.values[2];
 
-        double acceleration = Math.sqrt(x * x + y * y + z * z);
+        double acceleration = Math.sqrt(x * x + z * z);
 
-        if (acceleration > 60) {
+        if (acceleration > 50) {
             checkActivity(R.string.Agitado);
 
             // Reiniciar el temporizador
@@ -183,6 +183,9 @@ public class ModoNormal extends AppCompatActivity implements SensorEventListener
 
         if (currentActivity.equalsIgnoreCase(gestureActivity)) {
             // La actividad realizada coincide con la actividad actual
+            // Incrementar el contador de actividades completadas y actualizar el TextView
+            NumeroActividades--;
+            ContadorActividades.setText(String.valueOf(NumeroActividades));
             setMediaVolume(0.5f);
             mediaPlayercorrecto.start();
 
@@ -202,6 +205,7 @@ public class ModoNormal extends AppCompatActivity implements SensorEventListener
             generateRandomActivity();
         } else {
             // La actividad realizada no coincide con la actividad actual
+            // Realizar alguna acción si es necesario (p. ej., mostrar un mensaje de error)
             setMediaVolume(0.5f);
             mediaPlayerincorrecto.start();
             updateLives();
@@ -233,13 +237,11 @@ public class ModoNormal extends AppCompatActivity implements SensorEventListener
         editor.putInt("ElUltimoPuntajeObtenido", puntaje);
         editor.apply();
 
-
         if (puntaje > mejorPuntajeGuardado) {
             // El puntaje obtenido es mayor que el mejor puntaje guardado, actualizar el mejor puntaje
             editor = sharedPreferences.edit();
-            editor.putInt("ElUltimoPuntajeObtenido", puntaje);
+            editor.putInt("MejorPuntajeObtenido", puntaje);
             editor.apply();
-
         }
 
         Intent Perdiste = new Intent(this, Perdiste.class);

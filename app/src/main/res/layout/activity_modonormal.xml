@@ -121,7 +121,7 @@
             android:alpha="0.3"
             android:fontFamily="@font/singoroundedregular"
             android:gravity="center"
-            android:text="@string/contador"
+            android:text="10"
             android:textColor="#454545"
             android:textSize="550sp"
             android:textStyle="bold" />
